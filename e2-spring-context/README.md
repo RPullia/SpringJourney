@@ -1,4 +1,4 @@
-What is Spring?
+#What is Spring?
 
 
 Spring is a lightweight framework for creating Java applications. 
@@ -16,7 +16,7 @@ of the classes and not the programmer.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Spring ApplicationContext
+#Spring ApplicationContext
 
 It is the core of a Spring Boot application. It represents the Spring IoC container and is responsible for instantiating, configuring, and assembling beans. 
 The container receives instructions on which objects to instantiate, configure, and assemble by reading the configuration metadata. 
@@ -28,7 +28,7 @@ ApplicationContext context = new AnnotationConfigApplicationContext(ProjectConfi
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Configuration class of the project - ../src/main/java/config/ProjectConfig
+#Configuration class of the project - ../src/main/java/config/ProjectConfig
 
 Using the @Configuration, we define the configuration class that will be used by the context. There could be multiple configuration class.
 In a Spring project you can use XML and annotations at the same time to read configs
@@ -38,7 +38,7 @@ name will not contain a verb. Anyway it will return an instance of a bean automa
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Beans	- ../src/main/java/beans/..
+#Beans	- ../src/main/java/beans/..
 
 - The set of beans is declared inside the bean tag.
 - Each bean is declared with the bean tag.
