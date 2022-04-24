@@ -8,3 +8,4 @@ Here the list of the topics:
 
 1) Application Context, @Bean and @Configuration
 2) Another way to define Beans - @Component
+3) @Service and @Repository
