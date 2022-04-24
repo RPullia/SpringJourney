@@ -6,5 +6,5 @@ In each project, you'll find a text file containing notes on the topic being dis
 
 Here the list of the topics:
 
-1) Application Context, Beans and Configuration
-2) Another way to define Beans 
+1) Application Context, @Bean and @Configuration
+2) Another way to define Beans - @Component

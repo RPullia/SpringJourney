@@ -1,5 +1,8 @@
 package beans;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MyBean {
     private String text;
 
