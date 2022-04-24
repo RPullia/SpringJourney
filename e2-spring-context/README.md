@@ -19,7 +19,7 @@ At the start of the main class, Spring will start the project and will create a 
 Let's assume that we want to initialize the Bean's instance, for example assign some value to the text attribute.
 We can define an initializer method, and we can tag it using the **@PostConstructor** annotation, for example:
 
-` @PostConstruct
-    private void init(){
+     @PostConstruct
+     private void init(){
         this.text = "Hello I'm a Component";
-    }`
+     }
