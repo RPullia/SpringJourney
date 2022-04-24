@@ -10,10 +10,11 @@ Singleton in the sense that you will always have the same instance for the same 
 Spring attempts to resolve all dependencies specified by the configuration.
 
 The core module is based on the IoC (Inversion of Control) functionality.
-The IoC is a pattern that allows the automated management of dependencies: it will be the framework to take care of enhancing the dependencies of the classes and not the programmer.
+The IoC is a pattern that allows the automated management of dependencies: it will be the framework to take care of enhancing the dependencies 
+of the classes and not the programmer.
 
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Spring ApplicationContext
 
@@ -25,17 +26,17 @@ In this example we have used the AnnotationConfigApplicationContext in the main 
 
 ApplicationContext context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Configuration class of the project - ../src/main/java/config/ProjectConfig
 
 Using the @Configuration, we define the configuration class that will be used by the context. There could be multiple configuration class.
 In a Spring project you can use XML and annotations at the same time to read configs
 
-Inside the configuration class we will specify the beans in order to create their instance in the Spring context.
-In this case, even if not usual, the method name will not contain a verb. Anyway it will return an instance of a bean automatically in the context when we use the bean annotation
+Inside the configuration class we will specify the beans in order to create their instance in the Spring context. In this case, even if not usual, the method 
+name will not contain a verb. Anyway it will return an instance of a bean automatically in the context when we use the bean annotation
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Beans	- ../src/main/java/beans/..
 
@@ -64,3 +65,5 @@ Of course this will raise an exception (NoUniqueBeanDefinition) when asking the 
 because Spring will see that there are multiple instance of the same Bean.
 
 But we can solve this problem defining a primary bean with @Primary...this is the one that will be returned by the context
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------

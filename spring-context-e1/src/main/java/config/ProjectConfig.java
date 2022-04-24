@@ -15,7 +15,6 @@ public class ProjectConfig {
         return new MyBean();
     }
 
-
     // Defining two bean of the same class (one as Primary), setting a different attribute's value for them
     @Bean
     @Primary
@@ -29,6 +28,13 @@ public class ProjectConfig {
     public AnotherBean anotherBean2(){
         AnotherBean ab = new AnotherBean();
         ab.setText("Hello I'm another bean! But not the Primary...");
+        return ab;
+    }
+
+    @Bean("AnotherBeanNo3")
+    public AnotherBean anotherBean3(){
+        AnotherBean ab = new AnotherBean();
+        ab.setText("Hello I'm another bean! The number 3...");
         return ab;
     }
 }
