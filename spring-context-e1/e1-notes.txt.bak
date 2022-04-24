@@ -1,33 +1,52 @@
-Cos'è Spring?
+What is Spring?
 
-Spring è un framework leggero per creare applicazioni Java. 
-Spring è diviso in submodules che permettono di creare applicazioni di diverso tipo: standalone, web, data access, event driven, etc... 
 
-Tutte le classi che Spring deve gestire, vengono chiamate bean (da non confondere con i JavaBean). 
-Il container di Spring che contiene tutti i bean viene chiamato IoC Container. I bean di Spring, di default, hanno lo scope singleton e sono eagger. 
-Singleton nel senso che si avrà sempre la stessa istanza per lo stesso bean. Eagger, nel senso che allo startup del contesto, 
-Spring tenta di risolvere tutte le dipendenze indicate dalla configurazione.
+Spring is a lightweight framework for creating Java applications. 
+Spring is divided into submodules that allow you to create applications of different types: standalone, web, data access, event driven, etc. ... 
 
-Il modulo core è basato sulla funzionalità dell'IoC (Inversion of Control).
-L'IoC è un pattern che permette la gestione automatizzata delle dipendenze: sarà il framework ad occuparsi di valorizzare le dipendenze delle classi e non il programmatore.
+All the classes that Spring has to manage are called bean (not to be confused with JavaBean). 
+The Spring container that contains all bean is called IoC Container. Spring beans, by default, are singleton in scope and eagger. 
+Singleton in the sense that you will always have the same instance for the same bean. Eagger in the sense that at context startup, 
+Spring attempts to resolve all dependencies specified by the configuration.
+
+The core module is based on the IoC (Inversion of Control) functionality.
+The IoC is a pattern that allows the automated management of dependencies: it will be the framework to take care of enhancing the dependencies of the classes and not the programmer.
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Spring ApplicationContext
 
-E' la pietra angolare di un’applicazione Spring Boot. Rappresenta il contenitore Spring IoC ed è responsabile di istanziare, configurare e assemblare i beans. 
-Il contenitore riceve le istruzioni su quali oggetti istanziare, configurare e assemblare leggendo i metadati di configurazione. 
-I metadati di configurazione sono rappresentati in XML, annotazioni Java o codice Java.
-
-https://musicapavia.com/cose-il-contesto-dellapplicazione-in-spring-boot/
+It is the core of a Spring Boot application. It represents the Spring IoC container and is responsible for instantiating, configuring, and assembling beans. 
+The container receives instructions on which objects to instantiate, configure, and assemble by reading the configuration metadata. 
+Configuration metadata is represented in XML, Java annotations, or Java code.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Beans
 
-- L'insieme dei bean si dichiara dentro il tag beans.
-- Ogni bean è dichiarato con il tag bean.
-- Con l'attributo id, indichiamo il nome del bean, che deve essere univoco all'interno del contesto Spring.
-- Con class, indichiamo l'implementazione della classe del bean.
+- The set of beans is declared inside the bean tag.
+- Each bean is declared with the bean tag.
+- With the id attribute, we indicate the name of the bean, which must be unique within the Spring context.
+- With class, we indicate the implementation of the bean's class.
 
-https://www.vincenzoracca.com/blog/framework/spring/intro/
+What happen if we specify in the Configuration  more bean of the same class for example with a different attribute's value?
+
+        @Bean
+        public AnotherBean anotherBean1(){
+            AnotherBean ab = new AnotherBean();
+            ab.setText("Hello I'm one more bean! The no 1");
+            return ab;
+        }
+
+        @Bean
+        public AnotherBean anotherBean2(){
+            AnotherBean ab = new AnotherBean();
+            ab.setText("Hello I'm one more bean! The no 2");
+            return ab;
+        }
+
+Of course this will raise an exception (NoUniqueBeanDefinition) when asking the context for AnotherBean, 
+because Spring will see that there are multiple instance of the same Bean.
+
+But we can solve this problem defining a primary bean with @Primary...this is the one that will be returned by the context
