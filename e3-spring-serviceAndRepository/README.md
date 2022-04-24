@@ -44,3 +44,22 @@ The criteria used to resolve dependencies are in order :
 
 You can formally declare a bean id using the @Qualifier annotation along with @Bean. 
 When you need to order the inject of a bean with id X just annotate the field with @Autowired("X").
+
+## Best practice:
+We said that we can use the @Autowiredto ona field, a method or a constructor. For example we could use it on the field like this:
+
+      @Autowired
+      private ProductRepository productRepository;
+
+But in this case, is better to use it on the constructor like this:
+
+      private final ProductRepository productRepository;
+
+      @Autowired
+      public ProductDeliveryService (ProductRepository productRepository){
+        this.productRepository = productRepository;
+      }
+
+The results running the Main class will be the same, but this time the value in the context is injected inside the parameter instead injecting it inside the field.
+This allow us to define as final the field, since we are adviced to use final when it is required. In the first case, we couldn't define the fiels ad final
+cause no value was assigned.
