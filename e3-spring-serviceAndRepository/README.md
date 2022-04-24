@@ -11,6 +11,9 @@ With the **@Repository** instead, are those classe that connects to databases in
 Notice that we can also tag the service and repository class with the @Component annotation, SPring will not consider it 
 as a mistake, anyway, is better to specify the exact purpose of the class. 
 
+## Dependency Injection
+
+Dependency Injection is a fundamental aspect of the Spring framework, through which the Spring container “injects” objects into other objects or “dependencies”. Simply put, this allows for loose coupling of components and moves the responsibility of managing components onto the container.
 
 ## @Autowired
 
