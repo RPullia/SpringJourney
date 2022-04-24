@@ -64,6 +64,17 @@ What happen if we specify in the Configuration  more bean of the same class for 
 Of course this will raise an exception (NoUniqueBeanDefinition) when asking the context for AnotherBean, 
 because Spring will see that there are multiple instance of the same Bean.
 
-But we can solve this problem defining a primary bean with @Primary...this is the one that will be returned by the context
+But we can solve this problem defining a primary bean with @Primary.
+In this case if we ask to the context to get a bean by type (AnotherBean), we will get always the instnce of the prymary bean.
+If we want to get the instance of the other one, we will have to ask the context to get the bean by name (anotherBean2).
 
+Example:
+
+asking by type -> AnotherBean ab1 = context.getBean(AnotherBean.class);
+
+asking by name -> AnotherBean ab2 = context.getBean("anotherBean2",AnotherBean.class);
+
+
+In this case we used the thefault name of the bean (same of the method's name defined in the ProjectConfig).
+But we can also assign a specific name to the bean using @Bean("ThisIsMyName")
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
