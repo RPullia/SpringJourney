@@ -1,11 +1,11 @@
-#What is Spring?
+# What is Spring?
 
 
 Spring is a lightweight framework for creating Java applications. 
 Spring is divided into submodules that allow you to create applications of different types: standalone, web, data access, event driven, etc. ... 
 
-All the classes that Spring has to manage are called bean (not to be confused with JavaBean). 
-The Spring container that contains all bean is called IoC Container. Spring beans, by default, are singleton in scope and eagger. 
+All the classes that Spring has to manage are called == Bean == (not to be confused with JavaBean). 
+The Spring container that contains all bean is called ==IoC Container==. Spring beans, by default, are ==Singleton== in scope and eagger. 
 Singleton in the sense that you will always have the same instance for the same bean. Eagger in the sense that at context startup, 
 Spring attempts to resolve all dependencies specified by the configuration.
 
@@ -14,9 +14,8 @@ The IoC is a pattern that allows the automated management of dependencies: it wi
 of the classes and not the programmer.
 
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Spring ApplicationContext
+# Spring ApplicationContext
 
 It is the core of a Spring Boot application. It represents the Spring IoC container and is responsible for instantiating, configuring, and assembling beans. 
 The container receives instructions on which objects to instantiate, configure, and assemble by reading the configuration metadata. 
@@ -26,19 +25,19 @@ In this example we have used the AnnotationConfigApplicationContext in the main 
 
 ApplicationContext context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Configuration class of the project - ../src/main/java/config/ProjectConfig
 
-Using the @Configuration, we define the configuration class that will be used by the context. There could be multiple configuration class.
+# Configuration class of the project - ../src/main/java/config/ProjectConfig
+
+Using the ==@Configuration==, we define the configuration class that will be used by the context. There could be multiple configuration class.
 In a Spring project you can use XML and annotations at the same time to read configs
 
 Inside the configuration class we will specify the beans in order to create their instance in the Spring context. In this case, even if not usual, the method 
 name will not contain a verb. Anyway it will return an instance of a bean automatically in the context when we use the bean annotation
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Beans	- ../src/main/java/beans/..
+
+# Beans	- ../src/main/java/beans/..
 
 - The set of beans is declared inside the bean tag.
 - Each bean is declared with the bean tag.
@@ -77,4 +76,3 @@ asking by name -> AnotherBean ab2 = context.getBean("anotherBean2",AnotherBean.c
 
 In this case we used the thefault name of the bean (same of the method's name defined in the ProjectConfig).
 But we can also assign a specific name to the bean using @Bean("ThisIsMyName")
--------------------------------------------------------------------------------------------------------------------------------------------------------------
