@@ -1,0 +1,33 @@
+Cos'è Spring?
+
+Spring è un framework leggero per creare applicazioni Java. 
+Spring è diviso in submodules che permettono di creare applicazioni di diverso tipo: standalone, web, data access, event driven, etc... 
+
+Tutte le classi che Spring deve gestire, vengono chiamate bean (da non confondere con i JavaBean). 
+Il container di Spring che contiene tutti i bean viene chiamato IoC Container. I bean di Spring, di default, hanno lo scope singleton e sono eagger. 
+Singleton nel senso che si avrà sempre la stessa istanza per lo stesso bean. Eagger, nel senso che allo startup del contesto, 
+Spring tenta di risolvere tutte le dipendenze indicate dalla configurazione.
+
+Il modulo core è basato sulla funzionalità dell'IoC (Inversion of Control).
+L'IoC è un pattern che permette la gestione automatizzata delle dipendenze: sarà il framework ad occuparsi di valorizzare le dipendenze delle classi e non il programmatore.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Spring ApplicationContext
+
+E' la pietra angolare di un’applicazione Spring Boot. Rappresenta il contenitore Spring IoC ed è responsabile di istanziare, configurare e assemblare i beans. 
+Il contenitore riceve le istruzioni su quali oggetti istanziare, configurare e assemblare leggendo i metadati di configurazione. 
+I metadati di configurazione sono rappresentati in XML, annotazioni Java o codice Java.
+
+https://musicapavia.com/cose-il-contesto-dellapplicazione-in-spring-boot/
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Beans
+
+- L'insieme dei bean si dichiara dentro il tag beans.
+- Ogni bean è dichiarato con il tag bean.
+- Con l'attributo id, indichiamo il nome del bean, che deve essere univoco all'interno del contesto Spring.
+- Con class, indichiamo l'implementazione della classe del bean.
+
+https://www.vincenzoracca.com/blog/framework/spring/intro/
