@@ -4,8 +4,8 @@
 Spring is a lightweight framework for creating Java applications. 
 Spring is divided into submodules that allow you to create applications of different types: standalone, web, data access, event driven, etc. ... 
 
-All the classes that Spring has to manage are called == Bean == (not to be confused with JavaBean). 
-The Spring container that contains all bean is called ==IoC Container==. Spring beans, by default, are ==Singleton== in scope and eagger. 
+All the classes that Spring has to manage are called **Bean** (not to be confused with JavaBean). 
+The Spring container that contains all bean is called **IoC Container**. Spring beans, by default, are **Singleton** in scope and eagger. 
 Singleton in the sense that you will always have the same instance for the same bean. Eagger in the sense that at context startup, 
 Spring attempts to resolve all dependencies specified by the configuration.
 
@@ -23,13 +23,13 @@ Configuration metadata is represented in XML, Java annotations, or Java code.
 
 In this example we have used the AnnotationConfigApplicationContext in the main class passing to it the config class.
 
-ApplicationContext context = new AnnotationConfigApplicationContext(ProjectConfig.class);
+`ApplicationContext context = new AnnotationConfigApplicationContext(ProjectConfig.class);`
 
 
 
 # Configuration class of the project - ../src/main/java/config/ProjectConfig
 
-Using the ==@Configuration==, we define the configuration class that will be used by the context. There could be multiple configuration class.
+Using the **@Configuration**, we define the configuration class that will be used by the context. There could be multiple configuration class.
 In a Spring project you can use XML and annotations at the same time to read configs
 
 Inside the configuration class we will specify the beans in order to create their instance in the Spring context. In this case, even if not usual, the method 
@@ -63,15 +63,15 @@ What happen if we specify in the Configuration  more bean of the same class for 
 Of course this will raise an exception (NoUniqueBeanDefinition) when asking the context for AnotherBean, 
 because Spring will see that there are multiple instance of the same Bean.
 
-But we can solve this problem defining a primary bean with @Primary.
+But we can solve this problem defining a primary bean with **@Primary**.
 In this case if we ask to the context to get a bean by type (AnotherBean), we will get always the instnce of the prymary bean.
 If we want to get the instance of the other one, we will have to ask the context to get the bean by name (anotherBean2).
 
 Example:
 
-asking by type -> AnotherBean ab1 = context.getBean(AnotherBean.class);
+asking by type:  `AnotherBean ab1 = context.getBean(AnotherBean.class);`
 
-asking by name -> AnotherBean ab2 = context.getBean("anotherBean2",AnotherBean.class);
+asking by name:  `AnotherBean ab2 = context.getBean("anotherBean2",AnotherBean.class);`
 
 
 In this case we used the thefault name of the bean (same of the method's name defined in the ProjectConfig).
