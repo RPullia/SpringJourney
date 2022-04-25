@@ -9,4 +9,6 @@ Here the list of the topics:
 1) Application Context, @Bean and @Configuration
 2) Another way to define Beans - @Component
 3) @Service, @Repository and DI with @Autowired
-4) More on Dependency Injection, @Autowiring, @Wiring and @Qualifier
+4) Dependency Injection, Part 1 - without using stereotype annotations
+5) Dependency Injection, Part 2 - using stereotype annotations
+6) 
