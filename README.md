@@ -16,5 +16,6 @@ Here the list of the topics:
 
 Special thanks to:
 
-- Laurentiu Spilca - https://www.youtube.com/channel/UC0z3MpVGrpSZzClXrYcZBfw
 - Baeldung         - https://www.baeldung.com/
+- Laurentiu Spilca - https://www.youtube.com/channel/UC0z3MpVGrpSZzClXrYcZBfw
+- EmmeCiLab        - https://www.youtube.com/c/EmmeCiLab
