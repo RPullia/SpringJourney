@@ -46,7 +46,7 @@ You can formally declare a bean id using the @Qualifier annotation along with @B
 When you need to order the inject of a bean with id X just annotate the field with @Autowired("X").
 
 ## Best practice:
-We said that we can use the @Autowiredto ona field, a method or a constructor. For example we could use it on the field like this:
+We said that we can use the @Autowired on a field, a method or a constructor. For example we could use it on the field like this:
 
       @Autowired
       private ProductRepository productRepository;
