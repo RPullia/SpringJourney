@@ -9,7 +9,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan
+@ComponentScan(basePackages = "repositories")
 public class ProjectConfig {
 
     @Bean
@@ -17,7 +17,7 @@ public class ProjectConfig {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUrl("jdbc:mysql://localhost:3306/spring");
         dataSource.setUsername("root");
-        dataSource.setUsername("admin");
+        dataSource.setPassword("admin");
         return dataSource;
     }
 
