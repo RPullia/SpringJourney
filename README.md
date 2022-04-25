@@ -11,4 +11,4 @@ Here the list of the topics:
 3) @Service, @Repository and DI with @Autowired
 4) Dependency Injection - Part 1 
 5) Dependency Injection - Part 2: @Qualifier
-6) 
+6) Database connection - Jdbc
