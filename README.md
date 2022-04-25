@@ -12,3 +12,9 @@ Here the list of the topics:
 4) Dependency Injection - Part 1 
 5) Dependency Injection - Part 2: @Qualifier
 6) Database connection - Jdbc
+
+
+Special thanks to:
+
+- Laurentiu Spilca - https://www.youtube.com/channel/UC0z3MpVGrpSZzClXrYcZBfw
+- Baeldung         - https://www.baeldung.com/

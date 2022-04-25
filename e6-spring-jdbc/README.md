@@ -63,3 +63,10 @@ The value is null for the id cause we have previously set it as AUTOINCREMENT, r
 be replaced by the values passed to the jdbcTemplate when calling the table update.
 
 `book.getTitle(), book.getPrice()`
+
+
+In the getBooks method, we have used the **RowMapper** interface, it will tell jdbcTemplate how to map the rows of the resultSet
+in the object I need inside the returned list.
+
+Note: there are many other ways to implements that code block, as example we can create a separate class that implements the
+RowMapper interface, or we can simply add a private method in the same class and then call it with a lambda expression.
