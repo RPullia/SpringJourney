@@ -1,8 +1,5 @@
 package beans;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Book {
 
     private String title;
