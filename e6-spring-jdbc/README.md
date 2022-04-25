@@ -49,6 +49,17 @@ previous exercise.
 In order to work with the Book table we have created inside the DB, we need to implement inside the repositories package the 
 BookRepository class. This class is tagged using the stereotype annotation @Repository.
 
+Also, we have created the package "model", here we will define the Book's **POJO** that will replicate the db's table.
+https://www.baeldung.com/java-pojo-class
+
 Note: Since we are using a stereotype annotation, and we don't have all the beans definitions inside the ProjectConfig
       class, as we have seen in the past exerxises, we have to add the @ComponentScan annotation above ProjectConfig.
 
+Now as you can see in the addBook method, we are using the JdbcTemplate to execute the sql query
+
+`INSERT INTO book VALUES (NULL, ?, ?)`
+
+The value is null for the id cause we have previously set it as AUTOINCREMENT, regarding the two question marks, they will
+be replaced by the values passed to the jdbcTemplate when calling the table update.
+
+`book.getTitle(), book.getPrice()`
