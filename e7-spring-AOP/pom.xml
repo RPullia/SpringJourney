@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rpullia</groupId>
-    <artifactId>e6-spring-jdbc</artifactId>
+    <artifactId>e7-spring-AOP</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
