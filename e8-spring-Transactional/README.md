@@ -21,10 +21,6 @@ We have implemented the addOneBook method to throw a RuntimeException at a certa
 annotation, even if an exception occur at runtime,the book will be added to the db, and this is something that should be
 avoided.
 
-At this point, after executing the main class, we will see the runtime exception. Also, if we try to refresh the table 
-on the db, we will se a message like "There are pending changes, please rollback or commit first.". The pending operation
-in this case is our addBook.
-
 Looking at the exception in console, you will also notice that many of them refers to Spring AOP, that's because 
 @Transactional is nothing more that a sort of Aspect we have seen in the previous exercise.
 
