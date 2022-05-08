@@ -12,6 +12,8 @@ Here the list of the topics:
 4) Dependency Injection - Part 1 
 5) Dependency Injection - Part 2: @Qualifier
 6) Database connection - Jdbc
+7) Aspect Oriented Programming
+8) Transactional - Part 1
 
 
 Special thanks to:
