@@ -6,10 +6,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import services.BookService;
 
 public class Main {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
         BookService bs = context.getBean(BookService.class);
-        bs.addOneBook();
+        bs.addTenBook();
     }
 }

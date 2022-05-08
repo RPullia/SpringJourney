@@ -12,8 +12,10 @@ public class BookService {
     private BookRepository bookRepository;
 
     @Transactional
-    public void addOneBook(){
-        bookRepository.addBook("An unexpected journey", 50.00);
-        throw new RuntimeException("Something went wrong Bilbo!");
+    public void addTenBook(){
+        for (int i=1; i <= 10; i++){
+            bookRepository.addBook("Book"+i, 10.00);
+            if (i == 5) throw new RuntimeException("Something went wrong!");
+        }
     }
 }
